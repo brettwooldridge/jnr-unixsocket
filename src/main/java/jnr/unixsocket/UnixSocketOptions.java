@@ -83,11 +83,19 @@ public final class UnixSocketOptions {
      * Receive TTL.
      */
     public static final SocketOption<Integer> IP_RECVTTL =
+<<<<<<< HEAD
         new GenericOption<Credentials>("IP_RECVTTL", Integer.class);
+=======
+        new GenericOption<Integer>("IP_RECVTTL", Integer.class);
+>>>>>>> dgram-proto
 
     /**
      * Receive TTL.
      */
     public static final SocketOption<Integer> IP_RETOPTS =
+<<<<<<< HEAD
         new GenericOption<Credentials>("IP_RETOPTS", Integer.class);
+=======
+        new GenericOption<Integer>("IP_RETOPTS", Integer.class);
+>>>>>>> dgram-proto
 }
