@@ -73,5 +73,21 @@ public final class UnixSocketOptions {
     public static final SocketOption<Credentials> SO_PEERCRED =
         new GenericOption<Credentials>("SO_PEERCRED", Credentials.class);
 
-}
+    /**
+     * TTL.
+     */
+    public static final SocketOption<Integer> IP_TTL =
+        new GenericOption<Credentials>("IP_TTL", Integer.class);
 
+    /**
+     * Receive TTL.
+     */
+    public static final SocketOption<Integer> IP_RECVTTL =
+        new GenericOption<Integer>("IP_RECVTTL", Integer.class);
+
+    /**
+     * Receive TTL.
+     */
+    public static final SocketOption<Integer> IP_RETOPTS =
+        new GenericOption<Integer>("IP_RETOPTS", Integer.class);
+}
