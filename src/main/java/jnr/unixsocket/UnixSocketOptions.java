@@ -77,25 +77,17 @@ public final class UnixSocketOptions {
      * TTL.
      */
     public static final SocketOption<Integer> IP_TTL =
-        new GenericOption<Credentials>("IP_TTL", Integer.class);
+        new GenericOption<Integer>("IP_TTL", Integer.class);
 
     /**
      * Receive TTL.
      */
     public static final SocketOption<Integer> IP_RECVTTL =
-<<<<<<< HEAD
-        new GenericOption<Credentials>("IP_RECVTTL", Integer.class);
-=======
         new GenericOption<Integer>("IP_RECVTTL", Integer.class);
->>>>>>> dgram-proto
 
     /**
      * Receive TTL.
      */
     public static final SocketOption<Integer> IP_RETOPTS =
-<<<<<<< HEAD
-        new GenericOption<Credentials>("IP_RETOPTS", Integer.class);
-=======
         new GenericOption<Integer>("IP_RETOPTS", Integer.class);
->>>>>>> dgram-proto
 }
