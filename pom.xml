@@ -7,13 +7,13 @@
     <version>7</version>
   </parent>
 
-  <groupId>com.github.jnr</groupId>
+  <groupId>com.zaxxer</groupId>
   <artifactId>jnr-unixsocket</artifactId>
   <packaging>jar</packaging>
   <version>0.19-SNAPSHOT</version>
   <name>jnr-unixsocket</name>
   <description>Native I/O access for java</description>
-  <url>http://github.com/jnr/jnr-unixsocket</url>
+  <url>https://github.com/brettwooldridge/jnr-unixsocket</url>
 
   <licenses>
     <license>
@@ -24,9 +24,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:jnr/jnr-unixsocket.git</connection>
-    <developerConnection>scm:git:git@github.com:jnr/jnr-unixsocket.git</developerConnection>
-    <url>git@github.com:jnr/jnr-unixsocket.git</url>
+    <connection>scm:git:git@github.com:brettwooldridge/jnr-unixsocket.git</connection>
+    <developerConnection>scm:git:git@github.com:brettwooldridge/jnr-unixsocket.git</developerConnection>
+    <url>git@github.com:brettwooldridge/jnr-unixsocket.git</url>
   </scm>
 
   <developers>
@@ -40,6 +40,12 @@
       <name>Fritz Elfert</name>
       <email>fritz-github@fritz-elfert.de</email>
       <timezone>Europe/Berlin</timezone>
+    </developer>
+    <developer>
+      <id>brettwooldridge</id>
+      <name>Brett Wooldridge</name>
+      <email>brett.wooldridge+git@gmail.com</email>
+      <timezone>Asia/Tokyo</timezone>
     </developer>
   </developers>
 
@@ -304,5 +310,35 @@
       </extension>
     </extensions>
   </build>
+
+  <profiles>
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.4</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
 <!-- vim: set sw=2 ts=2 et: -->
